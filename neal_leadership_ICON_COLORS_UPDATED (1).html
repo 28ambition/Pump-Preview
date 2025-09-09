@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMP Leadership Performance - Transform Your Managers to Leaders</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #733ceb 0%, #733ceb 50%, #1e1533 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(15, 36, 22, 0.3), 0 10px 10px -5px rgba(15, 36, 22, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #733ceb 0%, #733ceb 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-consultation {
+            background: linear-gradient(135deg, #733ceb 0%, #733ceb 100%);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            padding: 1.2rem 2.4rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-consultation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .results-section-bg {
+            background-image: url('https://page.gensparksite.com/v1/base64_upload/cac581644958edcaa1e2be4a18af269b');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .results-section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        
+        .results-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-counter {
+            background: rgba(30, 21, 51, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid #2e2162;
+        }
+        
+        .testimonial-card {
+            background: rgba(30, 21, 51, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid #2e2162;
+        }
+
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 8, 40, 0.8));
+        }
+
+        .content-section {
+            position: relative;
+            z-index: 2;
+            background: #120828;
+        }
+
+        .red-text {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .green-text {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #120828;
+        }
+
+        .floating-bubble {
+            background: rgba(30, 21, 51, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid #2e2162;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero-logo {
+            margin-top: 6rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bio-section {
+            background: rgba(30, 21, 51, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid #2e2162;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .number-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #733ceb 0%, #733ceb 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 1.5rem auto;
+        }
+    
+/* Mobile-only header hiding - surgical precision change */
+@media (max-width: 767px) {
+    nav.fixed {
+        display: none !important;
+    }
+}
+</style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Background Video -->
+    <div class="hero-background">
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline>
+            <source src="https://cdn1.genspark.ai/user-upload-image/5/677097f3-ef03-4854-8d3d-5dcbb5ae80a3.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-white">
+                        <img src="https://cdn1.genspark.ai/user-upload-image/rmbg_generated/0_a288d548-e996-4ed2-9a78-2315a888db96" alt="Company Logo" style="height: 65px; width: auto;">
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-white font-medium">
+                        LET'S CONNECT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-overlay">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center animate-fade-in">
+                <!-- Logo above all text content -->
+                <div class="hero-logo">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/rmbg_generated/0_a288d548-e996-4ed2-9a78-2315a888db96" alt="Company Logo" class="mx-auto" style="height: 130px; width: auto;">
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-8">
+                    LEADERSHIP PERFORMANCE
+                </h1>
+                
+                <!-- Main Statement -->
+                <div class="text-2xl md:text-4xl font-bold text-white mb-8 max-w-5xl mx-auto leading-tight">
+                    Transform Your Managers to Leaders. Take Your Home Services Business to the Next Level.
+                </div>
+
+                <!-- Floating Translucent Green Text Bubble -->
+                <div class="floating-bubble max-w-4xl mx-auto mb-8 p-6 rounded-2xl space-y-4">
+                    <p class="text-lg md:text-xl red-text">
+                        Ineffective managers are costing your Home Services business profit, productivity, good people and growth.
+                    </p>
+                    <p class="text-lg md:text-xl green-text">
+                        We install proven leadership skills and tools that turn your managers into leaders who propel your business to the next level.
+                    </p>
+                </div>
+
+                <!-- Single Book Your Free Consultation Button -->
+                <div class="mb-8">
+                    <a href="https://calendly.com/chay-pumpslperformance/30min" target="_blank" class="btn-consultation inline-flex items-center rounded-full font-semibold text-white">
+                        GET YOUR FREE LEADERSHIP ASSESSMENT
+                        <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="why-owners" class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #000000;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    WHY OWNERS WORK WITH US
+                </h2>
+            </div>
+
+            <!-- Neal's Bio Section -->
+            <div class="bio-section animate-slide-up">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">
+                            Neal Samaratunga
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Led by Neal Samaratunga — trusted advisor to both Fortune 500 giants and ambitious small businesses — PUMP combines global best practices with a tailored approach for Home Services companies. With over 20 years of leadership and consulting experience, Neal has helped thousands of businesses build the leadership capabilities needed to break through to the next level.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-48 h-48 bg-gray-800 rounded-full overflow-hidden border-4 border-[#2e2162]">
+                            <img src="https://page.gensparksite.com/v1/base64_upload/a2a9076f9197d4c05e4f4b07dcfe6648" 
+                                 alt="Neal Samaratunga" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Book Your Free Consultation -->
+                <div class="testimonial-card p-8 rounded-2xl card-hover animate-slide-up">
+                    <div class="number-circle">1</div>
+                    <h3 class="text-2xl font-bold mb-4 text-center gradient-text">START YOUR FREE CONSULTATION</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mr-2 mt-1"></i>
+                            Tell us about where you're at and where you want your leadership team to be
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mr-2 mt-1"></i>
+                            Discover your biggest leadership challenges and opportunities
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-400 mr-2 mt-1"></i>
+                            Get expert insights tailored to your Home Services business
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Get a Custom Leadership Audit -->
+                <div class="testimonial-card p-8 rounded-2xl card-hover animate-slide-up">
+                    <div class="number-circle">2</div>
+                    <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Get a Custom Leadership Audit</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mr-2 mt-1"></i>
+                            We analyze your current leadership capabilities and gaps
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-400 mr-2 mt-1"></i>
+                            Identify specific areas for improvement and growth
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-400 mr-2 mt-1"></i>
+                            Receive a detailed roadmap for leadership transformation
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Implement and Grow -->
+                <div class="testimonial-card p-8 rounded-2xl card-hover animate-slide-up">
+                    <div class="number-circle">3</div>
+                    <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Implement and Grow</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-300 mr-2 mt-1"></i>
+                            Execute proven leadership development programs
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+                            Transform your managers into confident leaders
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mr-2 mt-1"></i>
+                            Watch your business grow through better leadership
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GET STARTED Button -->
+            <div class="text-center mt-8">
+                <a href="https://calendly.com/chay-pumpslperformance/30min" 
+                   class="cta-button inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#733ceb] to-[#733ceb] rounded-full hover:from-[#5a2bb8] hover:to-[#5a2bb8] transform hover:scale-105 transition-all duration-300 shadow-xl">
+                    BOOK YOUR COMPLIMENTARY CONSULTATION
+                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVEN RESULTS & ROI Section -->
+    <section class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">PROVEN RESULTS & ROI</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    PUMP Leadership Development programs aren't theory — they're tested, proven, and built to deliver measurable impact for home services businesses like yours. By working with PUMP, you equip your managers and teams with skills and systems that drive real results — on the job, on your bottom line, and throughout your company culture.
+                </p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-white mb-8 text-center">Here are outcomes you can expect when working with the PUMP team:</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Lower Turnover</h4>
+                        <p class="text-gray-300">Your people want to stay and perform, reducing hiring headaches and costs.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Greater Productivity</h4>
+                        <p class="text-gray-300">Teams work efficiently and consistently hit their targets.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Reduced Errors & Callbacks</h4>
+                        <p class="text-gray-300">Jobs get done right the first time, protecting profit.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Higher Customer Satisfaction</h4>
+                        <p class="text-gray-300">Customers get better service, leading to repeat business and more referrals.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Common Leadership Language</h4>
+                        <p class="text-gray-300">Smoother communication and stronger collaboration across your company.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Better Conversations</h4>
+                        <p class="text-gray-300">Leaders and teams solve problems, coach each other, and build trust every day.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Culture of Development</h4>
+                        <p class="text-gray-300">Your business becomes a place where people can grow and succeed.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-white mb-3">Mindset & Skill Growth</h4>
+                        <p class="text-gray-300">Managers and staff gain practical tools and new ways of thinking that drive lasting change.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl font-semibold text-white mb-8">Our approach guarantees your investment doesn't just teach — it transforms.</p>
+                <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                    GET YOUR FREE CONSULTATION
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE DELIVER Section -->
+    <section class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">HOW WE DELIVER</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Most training programs deliver limited results because of a lack of follow through. PUMP's proven leadership programs, paired with real-world coaching and hands-on application tools, ensures leadership becomes second nature for your managers.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <i class="fas fa-graduation-cap text-4xl text-purple-500 mb-6"></i>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Leadership Training</h3>
+                    <p class="text-gray-300">
+                        Your managers and supervisors dive into impactful, scenario-based training that is translated to the world of Home Services. Our training programs use real examples from contracting and fieldwork, teaching communication, accountability, and performance management.
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <i class="fas fa-users text-4xl text-cyan-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Leadership Coaching</h3>
+                    <p class="text-gray-300">
+                        We don't just train and go — we stay in your corner. Our structured, bi-weekly group and one-on-one coaching ensures new skills stick, habits improve, and your leaders are supported in the challenges that come with growth. Coaching sessions blend support, honest feedback, and problem-solving so managers can thrive.
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <i class="fas fa-tools text-4xl text-indigo-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Application Tools</h3>
+                    <p class="text-gray-300">
+                        PUMP equips managers and crews with practical resources — step-by-step guides, templates, job aids, and tracking tools — making leadership skills a natural part of every day.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                    BOOK YOUR FREE STRATEGY SESSION
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILT-FOR-YOU APPROACH Section -->
+    <section class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">BUILT-FOR-YOU APPROACH</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    No Home Services business is the same. That's why every PUMP program is tailored to fit your team's unique needs, your business goals, and your budget.
+                </p>
+                <p class="text-lg text-gray-300 mt-4">
+                    Whether you want to develop new managers, upskill experienced supervisors, or strengthen your senior leadership, we will design a solution that fits your business and people.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="stats-counter p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">Manager / Supervisor Level Up</h3>
+                    <p class="text-gray-300 mb-4">Custom training for up to 6 Managers</p>
+                    <div class="text-2xl font-bold text-white">$5,000 - $10,000</div>
+                </div>
+                
+                <div class="stats-counter p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">Additional Manager Level Up</h3>
+                    <p class="text-gray-300 mb-4">Add additional participants</p>
+                    <div class="text-2xl font-bold text-white">$500 - $1,000</div>
+                </div>
+                
+                <div class="stats-counter p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">Group Mastery Coaching</h3>
+                    <p class="text-gray-300 mb-4">3-months bi-weekly group coaching to refine and embed new skills and tools on the job</p>
+                    <div class="text-2xl font-bold text-white">$3,500</div>
+                </div>
+                
+                <div class="stats-counter p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">Owner/GM Senior Leader Coaching</h3>
+                    <p class="text-gray-300 mb-4">3-months bi-weekly coaching on supporting your leaders and leading your workforce to the next level</p>
+                    <div class="text-2xl font-bold text-white">$5,000</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl text-white mb-8">
+                    When you combine tailored training with ongoing coaching, new skills don't just get learned — they become lights-out habits that transform daily performance and drive your business forward.
+                </p>
+                <div class="space-y-4">
+                    <a href="#programs" class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-lg font-semibold mr-4">
+                        Learn more about PUMP's proven leadership training program
+                    </a>
+                    <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                        SCHEDULE YOUR COMPLIMENTARY SESSION
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUMP TRAINING PROGRAMS Section -->
+    <section id="programs" class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">PUMP TRAINING PROGRAMS</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    We believe every Home Services company can develop leaders who boost job performance of their team, deliver incredible customer experiences, and help their company unleash its potential. Our training isn't theoretical — it's practical, proven, and always tailored to your business real-world challenges.
+                </p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold text-white mb-8 text-center">Why Our Training Works for Home Services</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="testimonial-card p-6 rounded-xl text-center">
+                        <i class="fas fa-cog text-3xl text-green-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-3">Practical, step-by-step learning:</h4>
+                        <p class="text-gray-300">PUMP programs focus on scenarios your managers and teams face every day — on the jobsite, in the office, and with your customers.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl text-center">
+                        <i class="fas fa-thumbs-up text-3xl text-green-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-3">Relevant for every application:</h4>
+                        <p class="text-gray-300">Whether you're developing new supervisors or sharpening senior leaders, our programs turn potential into performance.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl text-center">
+                        <i class="fas fa-bolt text-3xl text-green-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-3">Immediate, on-the-job impact:</h4>
+                        <p class="text-gray-300">Your team leaves each training with clear tools and action steps they start using right away.</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 rounded-xl text-center">
+                        <i class="fas fa-handshake text-3xl text-green-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-3">On-going Coaching to solidify new skills:</h4>
+                        <p class="text-gray-300">We work with your leaders for 3 months to ensure your leaders get over the knowing-to-doing hump and drive real change in your business results.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                    CLAIM YOUR FREE CONSULTATION
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS Process Section -->
+    <section class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">HOW IT WORKS</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="stats-counter p-8 rounded-2xl mb-6">
+                        <div class="text-4xl font-bold text-white mb-4">1</div>
+                        <h3 class="text-xl font-bold gradient-text mb-4">Choose Programs</h3>
+                        <p class="text-gray-300">Choose the program(s) that fit your goals — or let us recommend the ideal solution based on a quick team assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="stats-counter p-8 rounded-2xl mb-6">
+                        <div class="text-4xl font-bold text-white mb-4">2</div>
+                        <h3 class="text-xl font-bold gradient-text mb-4">Custom Design</h3>
+                        <p class="text-gray-300">We customize delivery for your team structure and most urgent needs.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="stats-counter p-8 rounded-2xl mb-6">
+                        <div class="text-4xl font-bold text-white mb-4">3</div>
+                        <h3 class="text-xl font-bold gradient-text mb-4">Live Sessions & Exercises</h3>
+                        <p class="text-gray-300">Live sessions, hands-on exercises, and real scenarios ensure your team is ready to apply what they learn — right away.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="stats-counter p-8 rounded-2xl mb-6">
+                        <div class="text-4xl font-bold text-white mb-4">4</div>
+                        <h3 class="text-xl font-bold gradient-text mb-4">Ongoing Support</h3>
+                        <p class="text-gray-300">Ongoing coaching and support to help new skills stick and drive lasting change.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-bold text-white mb-6">Ready to Build Your Leadership Advantage?</h3>
+                <p class="text-lg text-gray-300 mb-8">Contact us today for a free consultation and explore how PUMP can drive lasting impact for your business.</p>
+                <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                    Book Free Consultation
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE OUR PROGRAMS Section -->
+    <section class="content-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #120828;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">EXPLORE OUR PROGRAMS</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                    <div>
+                        <p class="text-xl text-gray-300">
+                            As an authorized partner of <a href="https://www.blanchard.com" target="_blank" class="text-white hover:text-white-300 underline">Blanchard</a> – one of the world's leading leadership development firms - PUMP leverages heavily researched and time tested leadership training program that are proven to deliver measurable impact. PUMP will equip your managers and teams with skills and systems that drive real results — on the job, on your bottom line, and throughout your company culture.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://cdn1.genspark.ai/user-upload-image/rmbg_generated/0_46334cc8-ca93-4d16-9b59-849ac6115a5b" 
+                             alt="Blanchard Authorized Partner" 
+                             class="max-w-full h-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Management Essentials</h3>
+                    <p class="text-gray-300">Give new and rising managers the foundations to communicate clearly, set expectations, and confidently lead their teams — so jobs run smoother and people stick around.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Building Trust</h3>
+                    <p class="text-gray-300">Help leaders earn the respect and loyalty of both crews and clients — reducing friction, inspiring performance, and improving teamwork.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Coaching Essentials</h3>
+                    <p class="text-gray-300">Equip managers and supervisors with the skills to motivate, develop, and retain top talent — fueling a culture of accountability and growth.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Conversational Capacity</h3>
+                    <p class="text-gray-300">Teach your teams to tackle tough conversations with candor and respect — improving communication, solving problems faster, and minimizing drama on any job.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Employee Work Passion</h3>
+                    <p class="text-gray-300">Transform job satisfaction into genuine engagement, so your people take pride in their work and deliver better results for your customers.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Essential Motivators</h3>
+                    <p class="text-gray-300">Unlock what drives every team member — improving collaboration and making your crews more productive and resilient.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Leadership-Profit Chain</h3>
+                    <p class="text-gray-300">Connect the dots between strong leadership, happier employees, loyal customers, and real business growth.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Leading People Through Change</h3>
+                    <p class="text-gray-300">Prepare your managers to guide their teams through any transition — process changes, new tech, company growth — so everyone is bought in and moving forward.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Legendary Service®</h3>
+                    <p class="text-gray-300">Keep your clients coming back by building an unforgettable culture that delivers stellar customer service. Legendary Service® teaches your people how to create a personal service vision, take initiative, resolve problems, and ask for what they need to serve their customers better.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">Self Leadership</h3>
+                    <p class="text-gray-300">Empower every team member to step up, solve problems, and contribute at a higher level — boosting ownership and reliability across your business.</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-2xl card-hover">
+                    <h3 class="text-xl font-bold gradient-text mb-4">The SLII Experience</h3>
+                    <p class="text-gray-300">Introduce your leaders to the world's gold standard in situational leadership, giving them a toolkit to support, coach, and drive results at any skill level.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://calendly.com/chay-pumpslperformance/30min" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold">
+                    START YOUR FREE DISCOVERY CALL
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="content-section py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-8">Ready to Transform Your Leadership Team?</h2>
+            <p class="text-xl text-gray-300 mb-12">Book your free consultation today and discover how we can help you build leaders who drive growth.</p>
+            <a href="https://calendly.com/chay-pumpslperformance/30min" target="_blank" class="btn-primary inline-flex items-center px-12 py-4 rounded-full text-xl font-semibold">
+                <i class="fas fa-calendar-alt mr-3"></i>
+                SCHEDULE YOUR FREE STRATEGY CALL
+                <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="content-section py-12 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="text-2xl font-bold text-white mb-4">
+                        <img src="https://cdn1.genspark.ai/user-upload-image/rmbg_generated/0_a288d548-e996-4ed2-9a78-2315a888db96" alt="Company Logo" style="height: 38px; width: auto;">
+            </div>
+            <p class="text-gray-400 mb-6">Elite Leadership Training & Consulting</p>
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <p class="text-gray-500">&copy; 2025 PUMP Leadership Performance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpHdkqTFMy3GJU6L%2BzfdWPSdLngcZDTvq0ylnZwvzTjmCS3tNl9NVEKpc5pKJQEInIMS3R05wHyR1Wg6KAmBbAJ8hpVIeIweWzyVzJPz9AkJNpLxUZ1lTPkpCQdmnZ%2Bv0XRmKwRx9SvcIFA2JBYtdej%2BZpj4T5%2Fz6OL0%2Fqmnof8YaEZMxuZH%2BnHwQnFQ08ZRwM3CNtQJ2G5w4NjATEbfRzmKSHpG1%2B3dqtyt0TJR3xGwCHIBRRr2Fv%2BQDSB9wpJkVRGzZImG03eBnjq4jWk780tzRozzf%2B5ckpvdmk3sH2eCC0pt0sJ7mK%2Bk6adnPBkpwi%2BSjwG7yW9kRi4X6%2FJ2DLS3ua6jkinFkuAfzm7bfchGZ7gvEZw1IwZjw1HoAZFR1DfOevftnDX97NdaBAPanaSv9kdJHDlGTV7PNPVWmntQsxRjE3KiC1Flpy6nbLaBIjBrAepTiBnY1QypxBwuMoo4yNK%2BrZX2DliXSJQwfjcjoThLQJONN6vExemulVu4xXQo1Wk8iWwJoRr8IidBy88%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpHdkqTFMy3GJU6L+zfdWPSdLngcZDTvq0ylnZwvzTjmCS3tNl9NVEKpc5pKJQEInIMS3R05wHyR1Wg6KAmBbAJ8hpVIeIweWzyVzJPz9AkJNpLxUZ1lTPkpCQdmnZ+v0XRmKwRx9SvcIFA2JBYtdej+Zpj4T5/z6OL0/qmnof8YaEZMxuZH+nHwQnFQ08ZRwM3CNtQJ2G5w4NjATEbfRzmKSHpG1+3dqtyt0TJR3xGwCHIBRRr2Fv+QDSB9wpJkVRGzZImG03eBnjq4jWk780tzRozzf+5ckpvdmk3sH2eCC0pt0sJ7mK+k6adnPBkpwi+SjwG7yW9kRi4X6/J2DLS3ua6jkinFkuAfzm7bfchGZ7gvEZw1IwZjw1HoAZFR1DfOevftnDX97NdaBAPanaSv9kdJHDlGTV7PNPVWmntQsxRjE3KiC1Flpy6nbLaBIjBrAepTiBnY1QypxBwuMoo4yNK+rZX2DliXSJQwfjcjoThLQJONN6vExemulVu4xXQo1Wk8iWwJoRr8IidBy88=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDvin%2FIDo%2BT27%2FTU13MH1moXFEVcAKSpU2qHtP572nWBBP5ZSBYx8ILeh178uQ4dZjwqjc%2BsU3CBT7lKKOgQzzcS0yjhvFZr4DRcd65ci7JsGTq0LQkm9N6pKX%2FOO86zl12mQIZ4v7a9F3XgXktS0gMhxvxuLXi1HZGKHJswnC%2FmmHNTAV2Haa2YFtrqYZll8SBa0ZAOWQ8gnfnz2vXq8MVUIIzh24TeHsh4THI2lPgMgeSUv7DaoC1T%2FWTjBffCvS3v8oN%2Bk2mvphfiDRq%2BNo9cD2qDaVobo2QfmdEwlG5OSA%2B%2FXZkgiAhdfgD2PCsvJrIjEUh9VM%2FJXCltr3rCz7nFIUlKCaj6LjWpByJUCVyM0HipgEwwhYBGu65zB4qQwrM1MeH7YdMU%2B0eBmUHhVFbRnACRQ65ZKcN%2FtjrdW84frVBiqNa6%2Bl%2BLpNQlX5zcDdGpQjvAumFzFQa%2BXzTV7DEsa%2Bflw2QIIkBPz2nkbTpyvYly3uTbc19%2F9%2F4wU135XhHqmijTzJIeWKD9aYWPB%2B8c%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDvin/IDo+T27/TU13MH1moXFEVcAKSpU2qHtP572nWBBP5ZSBYx8ILeh178uQ4dZjwqjc+sU3CBT7lKKOgQzzcS0yjhvFZr4DRcd65ci7JsGTq0LQkm9N6pKX/OO86zl12mQIZ4v7a9F3XgXktS0gMhxvxuLXi1HZGKHJswnC/mmHNTAV2Haa2YFtrqYZll8SBa0ZAOWQ8gnfnz2vXq8MVUIIzh24TeHsh4THI2lPgMgeSUv7DaoC1T/WTjBffCvS3v8oN+k2mvphfiDRq+No9cD2qDaVobo2QfmdEwlG5OSA+/XZkgiAhdfgD2PCsvJrIjEUh9VM/JXCltr3rCz7nFIUlKCaj6LjWpByJUCVyM0HipgEwwhYBGu65zB4qQwrM1MeH7YdMU+0eBmUHhVFbRnACRQ65ZKcN/tjrdW84frVBiqNa6+l+LpNQlX5zcDdGpQjvAumFzFQa+XzTV7DEsa+flw2QIIkBPz2nkbTpyvYly3uTbc19/9/4wU135XhHqmijTzJIeWKD9aYWPB+8c=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
